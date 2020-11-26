@@ -23,6 +23,17 @@
 # THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO/IEC 19757-3,
 # AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD."
 
+# ------------------------------------------------------------------------------------------------
+# PROVENANCE:
+# 
+# This RelaxNG Compact schema for SVRL was taken from Annex D.2 of the official
+# Schematron standard: 
+# 
+# ISO/IEC 19757-3 Third edition 2020-06
+# Information technology — Document Schema Definition Languages (DSDL) —
+# Part 3: Rule-based validation using Schematron
+# ------------------------------------------------------------------------------------------------
+
 namespace local = ""
 default namespace svrl = "http://purl.oclc.org/dsdl/svrl"
 
@@ -70,9 +81,15 @@ diagnostic-reference =
     human-text
   }
 # only failed assertions are reported
-failed-assert = element failed-assert { attlist.assert-and-report, diagnostic-reference*, property-reference*, human-text }
+failed-assert =
+  element failed-assert {
+    attlist.assert-and-report, diagnostic-reference*, property-reference*, human-text
+  }
 # only successful asserts are reported
-successful-report = element successful-report { attlist.assert-and-report, diagnostic-reference*, property-reference*, human-text }
+successful-report =
+  element successful-report {
+    attlist.assert-and-report, diagnostic-reference*, property-reference*, human-text
+  }
 # property-reference
 property-reference =
   element property-reference {

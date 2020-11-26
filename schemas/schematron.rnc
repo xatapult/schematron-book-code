@@ -19,6 +19,17 @@
 # "THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO/IEC 19757-3,
 # AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD".
 
+#------------------------------------------------------------------------------------------------
+# PROVENANCE:
+#
+# This RelaxNG Compact schema for Schematron was taken from Annex A of the official
+# Schematron standard: 
+#
+# ISO/IEC 19757-3 Third edition 2020-06
+# Information technology — Document Schema Definition Languages (DSDL) —
+# Part 3: Rule-based validation using Schematron
+#------------------------------------------------------------------------------------------------
+
 namespace local = ""
 default namespace sch = "http://purl.oclc.org/dsdl/schematron"
 
@@ -31,7 +42,9 @@ schema =
     attribute schemaVersion { non-empty-string }?,
     attribute defaultPhase { xsd:IDREF }?,
     attribute queryBinding { non-empty-string }?,
-    (foreign & inclusion* & (title?, ns*, p*, let*, phase*, pattern+, p*, diagnostics?, properties?))
+    (foreign
+     & inclusion*
+     & (title?, ns*, p*, let*, phase*, pattern+, p*, diagnostics?, properties?))
   }
 active =
   element active {

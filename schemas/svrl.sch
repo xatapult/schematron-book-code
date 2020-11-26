@@ -21,34 +21,54 @@ notice:
 THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO/IEC 19757-3,
 AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD."
 -->
+
+<!-- ============================================================================================
+  PROVENANCE:
+  
+  This RelaxNG Schematron schema for SVRL was taken from Annex D.3 of the official
+  Schematron standard: 
+  
+  ISO/IEC 19757-3 Third edition 2020-06
+  Information technology — Document Schema Definition Languages (DSDL) —
+  Part 3: Rule-based validation using Schematron
+  
+  A fix was applied: The original schema from the standard didn't have a queryBinding attribute
+  on the root element. The default queryBinding (xslt) however makes the Schematron invalid 
+  (since non XSLT 1.0 expressions are used). Therefore an queryBinding="xslt2" was added.
+============================================================================================ -->
+
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:lang="en" queryBinding="xslt2">
   <sch:title>Schema for Schematron Validation Report Language</sch:title>
   <sch:ns prefix="svrl" uri="http://purl.oclc.org/dsdl/svrl"/>
-  <sch:p>The Schematron Validation Report Language is a simple language for implementations to use to compare their conformance. It is basically a
-    list of all the assertions that fail when validating a document, in any order, together with other information such as which rules fire. </sch:p>
-  <sch:p>This schema can be used to validate SVRL documents, and provides examples of the use of abstract rules and abstract patterns.</sch:p>
+  <sch:p>The Schematron Validation Report Language is a simple language for implementations to use
+    to compare their conformance. It is basically a list of all the assertions that fail when
+    validating a document, in any order, together with other information such as which rules fire. </sch:p>
+  <sch:p>This schema can be used to validate SVRL documents, and provides examples of the use of
+    abstract rules and abstract patterns.</sch:p>
   <sch:pattern>
     <sch:title>Elements</sch:title>
     <!--Abstract Rules -->
     <sch:rule abstract="true" id="second-level">
-      <sch:assert test="../svrl:schematron-output"> The <sch:name/> element is a child of schematron-output. </sch:assert>
+      <sch:assert test="../svrl:schematron-output"> The <sch:name/> element is a child of
+        schematron-output. </sch:assert>
     </sch:rule>
     <sch:rule abstract="true" id="childless">
-      <sch:assert test="count(*)=0"> The <sch:name/> element should not contain any elements. </sch:assert>
+      <sch:assert test="count(*)=0"> The <sch:name/> element should not contain any elements.
+      </sch:assert>
     </sch:rule>
     <sch:rule abstract="true" id="empty">
       <sch:extends rule="childless"/>
-      <sch:assert test="string-length(normalize-space(.)) = 0"> The <sch:name/> element should be empty. </sch:assert>
+      <sch:assert test="string-length(normalize-space(.)) = 0"> The <sch:name/> element should be
+        empty. </sch:assert>
     </sch:rule>
     <!-- Rules-->
     <sch:rule context="svrl:schematron-output">
       <sch:assert test="not(../*)"> The <sch:name/> element is the root element. </sch:assert>
-      <sch:assert
-        test="count(svrl:text) + count(svrl:ns-prefix-in-attribute-values)
+      <sch:assert test="count(svrl:text) + count(svrl:ns-prefix-in-attribute-values)
         +count(svrl:fired-rule) + count(svrl:failed-assert) +
         count(svrl:successful-report) = count(*)">
-        <sch:name/> may only contain the following elements: text, ns-prefix-in-attribute-values, active-pattern, fired-rule, failed-assert and
-        successful-report. </sch:assert>
+        <sch:name/> may only contain the following elements: text, ns-prefix-in-attribute-values,
+        active-pattern, fired-rule, failed-assert and successful-report. </sch:assert>
       <sch:assert test="svrl:active-pattern">
         <sch:name/> should have at least one active pattern. </sch:assert>
     </sch:rule>
@@ -58,14 +78,15 @@ AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD."
     <sch:rule context="svrl:diagnostic-reference">
       <sch:extends rule="childless"/>
       <sch:assert test="string-length(@diagnostic) &gt; 0">
-        <sch:name/> should have a diagnostic attribute, giving the id of the diagnostic. </sch:assert>
+        <sch:name/> should have a diagnostic attribute, giving the id of the diagnostic.
+      </sch:assert>
     </sch:rule>
     <sch:rule context="svrl:ns-prefix-in-attribute-values">
       <sch:extends rule="second-level"/>
       <sch:extends rule="empty"/>
       <sch:assert test="following-sibling::svrl:active-pattern
-        or following-sibling::svrl:ns-prefix-in-attribute-value"> A <sch:name/> comes
-        before an active-pattern or another ns-prefix-in-attribute-values element. </sch:assert>
+        or following-sibling::svrl:ns-prefix-in-attribute-value"> A <sch:name/> comes before
+        an active-pattern or another ns-prefix-in-attribute-values element. </sch:assert>
     </sch:rule>
     <sch:rule context="svrl:active-pattern">
       <sch:extends rule="second-level"/>
@@ -74,25 +95,24 @@ AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD."
     <sch:rule context="svrl:fired-rule">
       <sch:extends rule="second-level"/>
       <sch:extends rule="empty"/>
-      <sch:assert
-        test="preceding-sibling::active-pattern |
+      <sch:assert test="preceding-sibling::active-pattern |
         preceding-sibling::svrl:fired-rule |
         preceding-sibling::svrl:failed-assert |
-        preceding-sibling::svrl:successful-report"
-        > A <sch:name/> comes after an active-pattern, an empty fired-rule, a failed-assert or a successful report. </sch:assert>
-      <sch:assert test="string-length(@context) &gt; 0"> The <sch:name/> element should have a context attribute giving the current context, in simple
-        XPath format. </sch:assert>
+        preceding-sibling::svrl:successful-report"> A <sch:name/> comes after an
+        active-pattern, an empty fired-rule, a failed-assert or a successful report. </sch:assert>
+      <sch:assert test="string-length(@context) &gt; 0"> The <sch:name/> element should have a
+        context attribute giving the current context, in simple XPath format. </sch:assert>
     </sch:rule>
     <sch:rule context="svrl:failed-assert | svrl:successful-report">
       <sch:extends rule="second-level"/>
       <sch:assert test="count(svrl:diagnostic-reference) + count(svrl:text) =
-        count(*)"> The <sch:name/> element should only contain a text
-        element and diagnostic reference elements. </sch:assert>
-      <sch:assert test="count(svrl:text) = 1"> The <sch:name/> element should only contain a text element. </sch:assert>
-      <sch:assert
-        test="preceding-sibling::svrl:fired-rule |
-        preceding-sibling::svrl:failed-assert |preceding-sibling::svrl:successful-report">
-        A <sch:name/> comes after a fired-rule, a failed-assert or a successful- report. </sch:assert>
+        count(*)"> The <sch:name/> element should only contain a text element and diagnostic
+        reference elements. </sch:assert>
+      <sch:assert test="count(svrl:text) = 1"> The <sch:name/> element should only contain a text
+        element. </sch:assert>
+      <sch:assert test="preceding-sibling::svrl:fired-rule |
+        preceding-sibling::svrl:failed-assert |preceding-sibling::svrl:successful-report"> A
+        <sch:name/> comes after a fired-rule, a failed-assert or a successful- report. </sch:assert>
     </sch:rule>
     <!-- Catch-all rule-->
     <sch:rule context="*">
@@ -102,14 +122,15 @@ AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD."
   <sch:pattern>
     <sch:title>Unique Ids</sch:title>
     <sch:rule context="*[@id]">
-      <sch:assert test="not(preceding::*[@id=current()/@id][1])"> Id attributes should be unique in a document. </sch:assert>
+      <sch:assert test="not(preceding::*[@id=current()/@id][1])"> Id attributes should be unique in
+        a document. </sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern abstract="true" id="requiredAttribute">
     <sch:title>Required Attributes</sch:title>
     <sch:rule context=" $context ">
-      <sch:assert test="string-length( $attribute ) &gt; 0"> The <sch:name/> element should have a <sch:value-of select="$attribute/name()"/>
-        attribute. </sch:assert>
+      <sch:assert test="string-length( $attribute ) &gt; 0"> The <sch:name/> element should have a
+          <sch:value-of select="$attribute/name()"/> attribute. </sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern is-a="requiredAttribute">

@@ -6,7 +6,7 @@
   copies of this XML schema ("the Schema"), and derivations of the Schema:
   Permission is hereby granted, free of charge in perpetuity, to any
   person obtaining a copy of the Schema, to use, copy, modify, merge and
-  distribute free of charge, copies of the Schema for the purposes of
+  distribte free of charge, copies of the Schema for the purposes of
   developing, implementing, installing and using software based on the
   Schema, and to permit persons to whom the Schema is furnished to do so,
   subject to the following conditions:
@@ -25,7 +25,19 @@
   THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO/IEC 19757-3,
   AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD."
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://purl.oclc.org/dsdl/svrl" xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+
+<!-- ============================================================================================
+  PROVENANCE:
+  
+  This W3C XML Schema for SVRL was converted from the original svrl.rnc schema by
+  oXygen's schema convertor tool.
+  
+  The conversion is an approximation, since some things that are possible in RelaxNG cannot be
+  represented in an XML Schema. 
+============================================================================================ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://purl.oclc.org/dsdl/svrl" xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <xs:element name="schematron-output">
     <xs:complexType>

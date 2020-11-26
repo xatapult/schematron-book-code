@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://purl.oclc.org/dsdl/schematron"
+<!--
+  Copyright © ISO/IEC 2017
+  The following permission notice and disclaimer shall be included in all
+  copies of this XML schema ("the Schema"), and derivations of the Schema:
+  Permission is hereby granted, free of charge in perpetuity, to any
+  person obtaining a copy of the Schema, to use, copy, modify, merge and
+  distribute free of charge, copies of the Schema for the purposes of
+  developing, implementing, installing and using software based on the
+  Schema, and to permit persons to whom the Schema is furnished to do so,
+  subject to the following conditions:
+  THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR
+  OTHER DEALINGS IN THE SCHEMA.
+  In addition, any modified copy of the Schema shall include the following
+  notice:
+  "THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO/IEC 19757-3,
+  AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD".
+-->
+
+<!-- ============================================================================================
+  PROVENANCE:
+  
+  This W3C XML Schema for Schematron was converted from the original schematron.rnc schema by
+  oXygen's schema convertor tool.
+  
+  The conversion is an approximation, since some things that are possible in RelaxNG cannot be
+  represented in an XML Schema. After the conversion several manual adjustments had to be made. 
+============================================================================================ -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://purl.oclc.org/dsdl/schematron"
   xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!-- Element declarations -->
@@ -15,6 +49,7 @@
           <xs:element ref="sch:let"/>
           <xs:element ref="sch:phase"/>
           <xs:element ref="sch:pattern"/>
+          <!--<xs:element ref="sch:p"/>-->
           <xs:element ref="sch:diagnostics"/>
           <xs:element ref="sch:properties"/>
         </xs:choice>
@@ -159,6 +194,31 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:group ref="sch:foreign"/>
         <xs:element ref="sch:include"/>
+        <!--<xs:choice>
+          <xs:choice>
+            <xs:element ref="sch:title"/>
+            <xs:choice>
+              <xs:element ref="sch:p"/>
+              <xs:element ref="sch:let"/>
+              <xs:element ref="sch:rule"/>
+            </xs:choice>
+          </xs:choice>
+          <xs:choice>
+            <xs:element ref="sch:title"/>
+            <xs:choice>
+              <xs:element ref="sch:p"/>
+              <xs:element ref="sch:let"/>
+              <xs:element ref="sch:rule"/>
+            </xs:choice>
+          </xs:choice>
+          <xs:choice>
+            <xs:element ref="sch:title"/>
+            <xs:choice>
+              <xs:element ref="sch:p"/>
+              <xs:element ref="sch:param"/>
+            </xs:choice>
+          </xs:choice>
+        </xs:choice>-->
         <xs:choice>
           <xs:element ref="sch:title"/>
           <xs:choice>
@@ -254,12 +314,23 @@
         <xs:group ref="sch:foreign"/>
         <xs:element ref="sch:include"/>
         <xs:choice>
-          <xs:element ref="sch:let"/>
+          <!--<xs:choice>
+            <xs:element ref="sch:let"/>
+            <xs:choice>
+              <xs:element ref="sch:assert"/>
+              <xs:element ref="sch:report"/>
+              <xs:element ref="sch:extends"/>
+              <xs:element ref="sch:p"/>
+            </xs:choice>
+          </xs:choice>-->
           <xs:choice>
-            <xs:element ref="sch:assert"/>
-            <xs:element ref="sch:report"/>
-            <xs:element ref="sch:extends"/>
-            <xs:element ref="sch:p"/>
+            <xs:element ref="sch:let"/>
+            <xs:choice>
+              <xs:element ref="sch:assert"/>
+              <xs:element ref="sch:report"/>
+              <xs:element ref="sch:extends"/>
+              <xs:element ref="sch:p"/>
+            </xs:choice>
           </xs:choice>
         </xs:choice>
       </xs:choice>
