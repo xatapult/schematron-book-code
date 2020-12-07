@@ -1,0 +1,8 @@
+<parcels max-weight="100" delivery-date="2021-10-10">
+  <parcel weight="50" date="2021-09-29">
+    <contents>A large quantity of mouth masks</contents>
+  </parcel>
+  <parcel weight="45" date="2021-09-12">
+    <contents>Toys for girls and boys</contents>
+  </parcel>
+</parcels>
