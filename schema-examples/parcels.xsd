@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-
   <xs:element name="parcels">
     <xs:complexType>
       <xs:sequence>
@@ -8,9 +7,6 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="contents">
-                <xs:annotation>
-                  <xs:documentation>Description of the parcel's contents. Must have at least 5 characters.</xs:documentation>
-                </xs:annotation>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:minLength value="5"/>
@@ -18,29 +14,13 @@
                 </xs:simpleType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="weight" type="xs:positiveInteger" use="required">
-              <xs:annotation>
-                <xs:documentation>Weigth in kg.</xs:documentation>
-              </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="date" type="xs:date" use="required">
-              <xs:annotation>
-                <xs:documentation>The date this parcel is ready for shipping.</xs:documentation>
-              </xs:annotation>
-            </xs:attribute>
+            <xs:attribute name="weight" type="xs:positiveInteger" use="required"/>
+            <xs:attribute name="date" type="xs:date" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="max-weight" type="xs:positiveInteger" use="required">
-        <xs:annotation>
-          <xs:documentation>Maximum weigth of all parcels in kg.</xs:documentation>
-        </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="delivery-date" type="xs:date" use="required">
-        <xs:annotation>
-          <xs:documentation>The final delivery date of all parcels. Must be at least 10 days after the shipping dates for the individual parcels.</xs:documentation>
-        </xs:annotation>
-      </xs:attribute>
+      <xs:attribute name="max-weight" type="xs:positiveInteger" use="required"/>
+      <xs:attribute name="delivery-date" type="xs:date" use="required"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -6,27 +6,20 @@
   <start>
     <element name="parcels">
       <attribute name="delivery-date">
-        <doc:documentation>The final delivery date of all parcels. Must be at least 10 days after
-          the shipping dates for the individual parcels.</doc:documentation>
         <data type="date"/>
       </attribute>
       <attribute name="max-weight">
-        <doc:documentation>Maximum weigth of all parcels in kg.</doc:documentation>
         <data type="positiveInteger"/>
       </attribute>
       <oneOrMore>
         <element name="parcel">
           <attribute name="date">
-            <doc:documentation>The date this parcel is ready for shipping.</doc:documentation>
             <data type="date"/>
           </attribute>
           <attribute name="weight">
-            <doc:documentation>Weigth in kg.</doc:documentation>
             <data type="positiveInteger"/>
           </attribute>
           <element name="contents">
-            <doc:documentation>Description of the parcel's contents. Must have at least 5
-              characters.</doc:documentation>
             <text/>
           </element>
         </element>

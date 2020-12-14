@@ -1,12 +1,12 @@
 <!ELEMENT parcels (parcel)+>
 <!ATTLIST parcels
   xmlns CDATA #FIXED ''
-  delivery-date NMTOKEN #REQUIRED
+  delivery-date CDATA #REQUIRED
   max-weight CDATA #REQUIRED>
 <!ELEMENT parcel (contents)>
 <!ATTLIST parcel
   xmlns CDATA #FIXED ''
-  date NMTOKEN #REQUIRED
+  date CDATA #REQUIRED
   weight CDATA #REQUIRED>
 <!ELEMENT contents (#PCDATA)>
 <!ATTLIST contents

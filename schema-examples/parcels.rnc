@@ -3,17 +3,11 @@ namespace doc = "http://relaxng.org/ns/compatibility/annotations/1.0"
 namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
 start =
   element parcels {
-    ## The final delivery date of all parcels. Must be at least 10 days after
-    ## the shipping dates for the individual parcels.
     attribute delivery-date { xsd:date },
-    ## Maximum weigth of all parcels in kg.
     attribute max-weight { xsd:positiveInteger },
     element parcel {
-      ## The date this parcel is ready for shipping.
       attribute date { xsd:date },
-      ## Weigth in kg.
       attribute weight { xsd:positiveInteger },
-      ## Description of the parcel's contents. Must have at least 5 characters.
       element contents { text }
     }+
   }
