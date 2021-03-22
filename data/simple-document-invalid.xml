@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  
+  <title>The wonderful world of Schematron and much more information that you
+    want to know but were afraid to ask</title>
+  
+  <para>Welcome to the wonderful world of Schematron 
+    <footnote-reference idref="more-schematron-info"/>. …</para>
+  …
+
+  <!-- Footnotes: -->
+  <footnotes>
+    <!-- To be done -->
+  </footnotes>
+  
+</document>
