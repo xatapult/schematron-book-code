@@ -17,7 +17,7 @@
     <rule context="footnote-reference">
       <let name="footnote-id" value="@idref"/>
       <assert test="exists(//footnote[@id eq $footnote-id])">
-        Footnote id <value-of select="$footnote-id"/> not found.</assert>
+        Footnote id <value-of select="$footnote-id"/> not found</assert>
     </rule>
   </pattern>
   

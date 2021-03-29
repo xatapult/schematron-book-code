@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3">
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3" defaultPhase="titles-only">
 
   <!-- 1 - Define a phase that only checks the title length -->
   <phase id="titles-only">
@@ -29,7 +29,7 @@
     <rule context="footnote-reference">
       <let name="footnote-id" value="@idref"/>
       <assert test="exists(//footnote[@id eq $footnote-id])">
-        Footnote id <value-of select="$footnote-id"/> not found.</assert>
+        Footnote id <value-of select="$footnote-id"/> not found</assert>
     </rule>
   </pattern>
   
