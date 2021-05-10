@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+  <item id="bolts" price="5.49">A box with 20 bolts</item>
+  <item id="nuts" price="3.78">A box with 20 nuts</item>
+  <!-- … many, many more items… -->
+  <order>
+    <ordered-item id-ref="boltsx" quantity="5"/>
+    <ordered-item id-ref="nuts" quantity="10"/>
+  </order>
+  <!-- … many, many more orders… -->
+</orders>

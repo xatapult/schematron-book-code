@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../examples/query-binding/check-references-1.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <DramaText>
   <PlayHeader>
     <Title>Macbeth</Title>
