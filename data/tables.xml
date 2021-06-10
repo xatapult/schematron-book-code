@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+
+  <!-- HTML table: -->
+  <table>
+    <tr>
+      <td>Yes!</td>
+      <td>No!</td>
+    </tr>
+  </table>
+
+  <!-- Calendar table-like structure: -->
+  <year>
+    <week>
+      <day>Monday</day>
+      <day>Tuesday</day>
+      <!-- Etc. -->
+    </week>
+  </year>
+
+</tables>
