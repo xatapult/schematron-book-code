@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoices date="2020-11-11" total="10117.82">
+  <invoice date="2020-10-04" total="10000.50" id="12345"/>
+  <invoice date="2020-10-16" total="100.83" id="56789"/>
+  <invoice date="2020-10-18" total="16.5" id="56789"/>
+</invoices>
+    
