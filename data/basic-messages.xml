@@ -1,0 +1,11 @@
+<messages>
+  <dutch color="red">
+    <message>Hallo daar!</message>
+  </dutch>
+  <english color="yellow" default="true">
+    <message>Hi there!</message>
+  </english>
+  <french color="purple">
+    <message>Salut!</message>
+  </french>
+</messages>
