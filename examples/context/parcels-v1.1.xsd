@@ -24,8 +24,8 @@
       <xs:attribute name="max-weight" type="xs:positiveInteger" use="required"/>
       <xs:attribute name="delivery-date" type="xs:date" use="required"/>
       
+      <!-- The sum of all parcels weights must not exceed maximum weight: -->
       <xs:assert test="sum(parcel/@weight) le xs:double(@max-weight)"/>
-      <!-- TBD Other business rule about dates -->
       
     </xs:complexType>
   </xs:element>
