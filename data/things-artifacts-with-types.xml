@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<things>
-  <thing name="thing 1" type="normal"/>
-  <thing name="thing 2" type="special"/>
-  <artifact name="artifact 1" type="special"/>
-  <thing name="thing 3" type="vintage"/>
-  <artifact name="artifact 2" type="alien"/>
-</things>
