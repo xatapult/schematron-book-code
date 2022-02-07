@@ -3,7 +3,7 @@
   <pattern>
     <rule context="thing">
       <let name="thing-type" value="@type"/>
-      <assert test="$thing-type = ('normal', 'special', 'deprecated')">
+      <assert test="($thing-type eq 'normal') or ($thing-type eq 'special')">
         Invalid type on <value-of select="@name"/>: <value-of select="$thing-type"/>
       </assert>
     </rule>

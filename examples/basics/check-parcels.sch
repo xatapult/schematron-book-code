@@ -8,7 +8,7 @@
     value="xs:dayTimeDuration('P' || $delivery-day-limit || 'D')"/>
   
   <!-- 2 - Grab important values from the root element and make sure they 
-    have the right datatype: -->
+    have the right data type: -->
   <let name="max-weight" value="xs:double(/*/@max-weight)"/>
   <let name="delivery-date" value="xs:date(/*/@delivery-date)"/>
   
@@ -26,7 +26,7 @@
   
   <pattern>
     <rule context="parcel">
-      <!-- 4 - Get the parcel's date and make sure it has the right datatype: -->
+      <!-- 4 - Get the parcel's date and make sure it has the right data type: -->
       <let name="parcel-date" value="xs:date(@date)"/>
       <assert 
         test="($delivery-date - $parcel-date) gt $delivery-day-limit-as-duration">

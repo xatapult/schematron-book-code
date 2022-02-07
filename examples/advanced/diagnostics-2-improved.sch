@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3">
 
-  <let name="thing-types" value="('normal', 'special', 'deprecated')"/>
-  <let name="artifact-types" value="('zork', 'martian', 'unknown')"/>
+  <let name="thing-types" value="('normal', 'special')"/>
+  <let name="artifact-types" value="('zork', 'martian')"/>
   
   <pattern>
     <rule context="thing">
       <assert test="@type = $thing-types" 
-        diagnostics="type-message thing-explanation"/>
+        diagnostics="message-1 thing-explanation"/>
     </rule>
   </pattern>
   <pattern>
     <rule context="artifact">
       <assert test="@type = $artifact-types" 
-        diagnostics="type-message artifact-explanation"/>
+        diagnostics="message-1 artifact-explanation"/>
     </rule>
   </pattern>
   
   <diagnostics>
-    <diagnostic id="type-message">
+    <diagnostic id="message-1">
       Invalid type on <value-of select="@name"/>: <value-of select="@type"/>.
     </diagnostic>
     <diagnostic id="thing-explanation">

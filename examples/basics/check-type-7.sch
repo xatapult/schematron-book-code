@@ -3,7 +3,7 @@
   <pattern>
     <rule context="@type">
       <assert test="(. eq 'normal') or (. eq 'special')">
-        Invalid type: <value-of select="."/>
+        <name path=".."/>: Invalid type on <value-of select="../@name"/>: <value-of select="."/>
       </assert>
     </rule>
   </pattern>

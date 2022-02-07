@@ -3,26 +3,26 @@
 
   <pattern>
     <rule context="thing">
-      <assert test="@type = ('normal', 'special', 'deprecated')" 
-        diagnostics="type-message thing-explanation"/>
+      <assert test="(@type eq 'normal') or (@type eq 'special')" 
+        diagnostics="message-1 thing-explanation"/>
     </rule>
   </pattern>
   <pattern>
     <rule context="artifact">
-      <assert test="@type = ('zork', 'martian', 'unknown')" 
-        diagnostics="type-message artifact-explanation"/>
+      <assert test="(@type eq 'zork') or (@type eq 'martian')" 
+        diagnostics="message-1 artifact-explanation"/>
     </rule>
   </pattern>
   
   <diagnostics>
-    <diagnostic id="type-message">
+    <diagnostic id="message-1">
       Invalid type on <value-of select="@name"/>: <value-of select="@type"/>.
     </diagnostic>
     <diagnostic id="thing-explanation">
-      Allowed types for a thing: normal, special, deprecated.
+      Allowed types for a thing: normal, special.
     </diagnostic>
     <diagnostic id="artifact-explanation">
-      Allowed types for an artifact: zork, martian, unknown.
+      Allowed types for an artifact: zork, martian.
     </diagnostic>
   </diagnostics>
   

@@ -2,7 +2,7 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3">
   <pattern>
     <rule context="thing">
-      <assert test="@type = ('normal', 'special', 'deprecated')">
+      <assert test="(@type eq 'normal') or (@type eq 'special')">
         Invalid type on <value-of select="@name"/>: <value-of select="@type"/>
       </assert>
     </rule>

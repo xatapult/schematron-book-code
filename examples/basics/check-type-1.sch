@@ -2,7 +2,7 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3">
   <pattern>
     <rule context="@type">
-      <assert test=". = ('normal', 'special', 'deprecated')">Invalid type!</assert>
+      <assert test="(. eq 'normal') or (. eq 'special')">Invalid type!</assert>
     </rule>
   </pattern>
 </schema>

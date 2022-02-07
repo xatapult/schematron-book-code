@@ -4,14 +4,14 @@
   <pattern>
     <rule context="thing">
       <!-- 1 - Refer to a message in a <diagnostics> section with the diagnostics attribute. -->
-      <assert test="@type = ('normal', 'special', 'deprecated')" diagnostics="type-message"/>
+      <assert test="(@type eq 'normal') or (@type eq 'special')" diagnostics="message-1"/>
     </rule>
   </pattern>
   
   <!-- 2 - A <diagnostics> section contains centralized definitions of messages.-->
   <diagnostics>
     <!-- 3 - A <diagnostic> element contains a single message. It is referenced by id. -->
-    <diagnostic id="type-message">
+    <diagnostic id="message-1">
       Invalid type on <value-of select="@name"/>: <value-of select="@type"/>.
     </diagnostic>
   </diagnostics>

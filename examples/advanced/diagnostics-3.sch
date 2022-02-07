@@ -4,7 +4,7 @@
   <pattern>
     <rule context="thing">
       <!-- 1 - Refer to the diagnostics in all languages: -->
-      <assert test="@type = ('normal', 'special', 'deprecated')" 
+      <assert test="(@type eq 'normal') or (@type eq 'special')" 
         diagnostics="type-message-en type-message-nl"/>
     </rule>
   </pattern>

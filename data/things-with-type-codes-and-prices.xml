@@ -1,0 +1,6 @@
+<things>
+  <thing name="thing 1" type="A125" price="17.25"/>
+  <thing name="thing 2" type="A125" price="17.26"/>
+  <thing name="thing 3" type="X96" price="89.34"/>
+  <thing name="thing 4" type="Y78" price="10.01"/>
+</things>

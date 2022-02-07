@@ -3,7 +3,7 @@
   <pattern>
     <rule context="thing">
       <let name="thing-type" value="@type"/>
-      <assert test="$thing-type = ('normal', 'special', 'deprecated')">
+      <assert test="($thing-type eq 'normal') or ($thing-type eq 'special')">
         Invalid type on <value-of select="@name"/>: <value-of select="$thing-type"/>.
         $thing-type is attribute: <value-of select="$thing-type instance of attribute()"/>.
         Local name of $thing-type: <value-of select="local-name($thing-type)"/>.
