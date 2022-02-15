@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../examples/sqf/check-things-for-sqf.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <things>
   <thing name="thing 1" type="normal"/>
-  <thing name="thing 2" type="normal"/>
+  <thing name="thing 2" type="outstanding"/>
   <thing name="thing 3" type="special"/>
   <thing type="normal"/>
 </things>
