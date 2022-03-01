@@ -317,7 +317,7 @@
                 <StartPresence role-ref="SOLDIER">Wounded and bleeding</StartPresence>
               </StartPresences>
               <Entries>
-                <Entry role-ref="DUNCANx MALCOLM DONALBAIN LENNOX ATTENDANTS"/>
+                <Entry role-ref="DUNCAN MALCOLM DONALBAIN LENNOX ATTENDANTS"/>
               </Entries>
               <Clause role-ref="DUNCAN">
                 <Text>What bloody man is that? He can report,<Br/>As seemeth by his plight, of the revolt<Br/>The newest state.</Text>
