@@ -1,0 +1,8 @@
+<?xml-model href="../examples/examples-recipes/check-pi-comments-2.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?process type="full"?>
+
+<external-data>
+  <!-- Produced by ACMEDATA -->
+  …
+</external-data>
+
