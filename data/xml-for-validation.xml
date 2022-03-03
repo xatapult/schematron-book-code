@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data timestamp="2022-03-01T12:12:23">
+  <thing thingid="12345">Something</thing>
+  <thing thingid="12346">Another thing</thing>
+  <object>Object 1</object>
+  <object remark="just an object">Object 2</object>
+</data>
