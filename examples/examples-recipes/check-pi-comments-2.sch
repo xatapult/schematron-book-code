@@ -26,15 +26,15 @@
   
   <pattern>
     <rule context="/*">
-      <!-- The following test expression works like this: 
+      <!-- The following test expression works as follows: 
         * Take all nodes (all types) underneath the root element: node().
         * Filter out the ones that contain only spaces using the predicate [normalize-space(.)].
           This is necessary because there is a whitespace-only text node between the root 
           element and the first comment (it contains a line break and spaces). 
           The normalize-space() function reduces whitespace only
           strings to an empty string. An empty string has the effective boolean value false, so
-          this predicate removes all whitespace only nodes.
-        * From what's left, take only the first one using the [1] predicate
+          this predicate removes all whitespace-only nodes.
+        * From what's left, take the first one using the [1] predicate
         * Check that this node is a comment using the [self::comment()] predicate.
         * Check that it contains the expected string value.
       -->
