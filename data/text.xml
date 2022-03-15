@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<body>
-  <p>Hello <b>Schematron</b>!</p>
+  <p class="greeting">Hello <b>Schematron</b>!</p>
 </body>
