@@ -13,4 +13,4 @@ Erik Siegel
 
 [Xatapult](http://www.xatapult.com)
 
-[mailto:erik@xatapult.nl](erik@xatapult.nl)
+[erik@xatapult.nl](mailto:erik@xatapult.nl)
