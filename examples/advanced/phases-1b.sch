@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3" defaultPhase="titles-only">
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3">
 
   <!-- 1 - Define a phase that only checks the title length -->
   <phase id="titles-only">
