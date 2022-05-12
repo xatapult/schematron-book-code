@@ -4,7 +4,7 @@
   <pattern>
     <rule context="article">
       <assert test="starts-with(@code, /inventory-list/@depcode)">
-        Invalid article code
+        The article code must start with the right prefix
       </assert>
     </rule>
   </pattern>

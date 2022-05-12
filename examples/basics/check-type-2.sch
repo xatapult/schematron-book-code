@@ -2,7 +2,9 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3">
   <pattern>
     <rule context="@type">
-      <report test="not((. eq 'normal') or (. eq 'special'))">Invalid type!</report>
+      <report test="not((. eq 'normal') or (. eq 'special'))">
+        The type must be normal or special
+      </report>
     </rule>
   </pattern>
 </schema>

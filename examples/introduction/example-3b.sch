@@ -8,9 +8,10 @@
       
       <let name="article-code" value="@code"/>
       
-      <assert test="starts-with($article-code, $department-code)">
-        Invalid article code for <value-of select="name"/>: <value-of select="$article-code"/> 
-        (must start with <value-of select="$department-code"/>)
+      <assert test="starts-with(@code, $department-code)">
+        The article code (<value-of select="$article-code"/>) must start with the right 
+        prefix (<value-of select="$department-code"/>) 
+        for <value-of select="name"/>
       </assert>
     </rule>
   </pattern>
