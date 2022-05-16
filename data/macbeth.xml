@@ -275,7 +275,7 @@
     <Acts>
       <Act>
         <Scenes>
-          <Scene>
+          <Scene scene-id="scene-1">
             <Actions>
               <LocationDescription>An open Place. Thunder and Lightning.</LocationDescription>
               <Entries>
@@ -310,7 +310,7 @@
               </Exits>
             </Actions>
           </Scene>
-          <Scene>
+          <Scene scene-id="scene-2">
             <Actions>
               <LocationDescription>A Camp near Forres. Alarum within.</LocationDescription>
               <StartPresences>
