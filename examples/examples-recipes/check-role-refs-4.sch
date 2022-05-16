@@ -5,7 +5,9 @@
   <xsl:key name="role-ids" match="/*/Roles/*" use="@role-id"/>  
   
   <pattern>
-    <rule context="@role-ref[. eq '#all']"/>
+    <rule context="@role-ref[. eq '#all']">
+      <assert test="true()"/> 
+    </rule>
     <rule context="@role-ref">
       <assert test="
         every $ref in tokenize(., '\s+')[.] 
