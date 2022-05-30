@@ -30,7 +30,8 @@
       <let name="expected-price" value="f:get-price(@type)"/>
       <assert test="$expected-price eq xs:double(@price)">
         The price for <value-of select="@name"/> should be 
-        <value-of select="$expected-price"/></assert>
+        <value-of select="$expected-price"/>
+      </assert>
     </rule>
   </pattern>
 
