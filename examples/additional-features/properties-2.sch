@@ -3,7 +3,9 @@
  
   <properties>
     <property id="programmer-alert">Programmers, watch out!</property>
-    <property id="check-rounding-error">Please check for rounding errors!</property>
+    <property id="check-rounding-error">
+      Please check for rounding errors!
+    </property>
     <property id="check-subsystem">Did subsystem XYZ fail again?</property>
   </properties>
  

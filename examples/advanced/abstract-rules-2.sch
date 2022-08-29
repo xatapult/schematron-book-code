@@ -14,7 +14,8 @@
       <!-- 2 - Use the abstract rule for the volume check for wooden crates -->
       <extends rule="volume-check"/>
       <assert test=". eq 'books'">
-        A wooden crate may only contain books. This one contains <value-of select="."/>
+        A wooden crate may only contain books. This one contains 
+        <value-of select="."/>
       </assert>
     </rule>
 

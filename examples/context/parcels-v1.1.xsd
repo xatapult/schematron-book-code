@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" 
+  elementFormDefault="qualified"
   vc:minVersion="1.1">
   <xs:element name="parcels">
     <xs:complexType>
@@ -16,12 +17,14 @@
                 </xs:simpleType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="weight" type="xs:positiveInteger" use="required"/>
+            <xs:attribute name="weight" type="xs:positiveInteger" 
+              use="required"/>
             <xs:attribute name="date" type="xs:date" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="max-weight" type="xs:positiveInteger" use="required"/>
+      <xs:attribute name="max-weight" type="xs:positiveInteger" 
+        use="required"/>
       <xs:attribute name="delivery-date" type="xs:date" use="required"/>
       
       <!-- The sum of all parcels weights must not exceed maximum weight: -->

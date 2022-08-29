@@ -18,8 +18,9 @@
         <xsl:sequence select="xs:double($data-element-for-type/@price)"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:sequence 
-          select="xs:double($prices-document/type-codes-and-prices/@default-price)"/>
+        <xsl:sequence select="
+            xs:double($prices-document/type-codes-and-prices/@default-price)
+          "/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>

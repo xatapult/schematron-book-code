@@ -3,7 +3,9 @@
 
   <pattern>
     <rule context="entry">
-      <assert test="count(preceding-sibling::entry) lt 2">Superfluous column</assert>
+      <assert test="count(preceding-sibling::entry) lt 2">
+        Superfluous column
+      </assert>
     </rule>
   </pattern>
 

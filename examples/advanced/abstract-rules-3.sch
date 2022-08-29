@@ -6,7 +6,8 @@
     <rule context="crate[@material eq 'wood']">
       <extends href="volume-check.sch"/>
       <assert test=". eq 'books'">
-        A wooden crate may only contain books. This one contains <value-of select="."/>
+        A wooden crate may only contain books. This one contains 
+        <value-of select="."/>
       </assert>
     </rule>
 

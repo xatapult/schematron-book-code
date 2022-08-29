@@ -19,7 +19,8 @@
   
   <diagnostics>
     <diagnostic id="message-1">
-      Invalid type on <value-of select="@name"/>: <value-of select="@type"/>.
+      Invalid type on <value-of select="@name"/>: 
+      <value-of select="@type"/>.
     </diagnostic>
     <diagnostic id="thing-explanation">
       Allowed types for a thing: 

@@ -12,7 +12,8 @@
   <pattern>
     <rule context="crate[@material eq 'wood']">
       <assert test=". eq 'books'">
-        A wooden crate may only contain books. This one contains <value-of select="."/>
+        A wooden crate may only contain books. This one contains 
+        <value-of select="."/>
       </assert>
     </rule>
   </pattern>

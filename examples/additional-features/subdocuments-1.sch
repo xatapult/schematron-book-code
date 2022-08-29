@@ -6,7 +6,8 @@
   <pattern documents="/*/xi:include/@href">
     <rule context="p">
       <assert test="@class ne 'brightred'">
-        The class <value-of select="@class"/> is forbidden (<value-of select="base-uri(.)"/>)!
+        The class <value-of select="@class"/> is forbidden 
+        (<value-of select="base-uri(.)"/>)!
       </assert>
     </rule>
   </pattern>

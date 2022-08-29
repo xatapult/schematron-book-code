@@ -10,7 +10,9 @@
 
   <!-- Footnotes: -->
   <footnotes>
-    <footnote id="more-schematron-info">More information to be found at …</footnote>
+    <footnote id="more-schematron-info">
+      More information to be found at …
+    </footnote>
   </footnotes>
   
 </document>

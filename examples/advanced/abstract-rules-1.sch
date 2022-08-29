@@ -8,7 +8,8 @@
         The crate with <value-of select="."/> is too big
       </assert>
       <assert test=". eq 'books'">
-        A wooden crate may only contain books. This one contains <value-of select="."/>
+        A wooden crate may only contain books. This one contains 
+        <value-of select="."/>
       </assert>
     </rule>
     

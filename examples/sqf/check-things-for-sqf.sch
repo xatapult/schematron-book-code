@@ -7,7 +7,8 @@
     <rule context="thing">
 
       <!-- 2 - Check that things have a correct type: -->
-      <assert test="@type eq 'normal' or @type eq 'special'" sqf:fix="change-type delete-thing">
+      <assert test="@type eq 'normal' or @type eq 'special'" 
+        sqf:fix="change-type delete-thing">
         Type must be normal or special
       </assert>
 
@@ -28,9 +29,12 @@
       <!-- 5 - Define a QuickFix to change the type of a thing: -->
       <sqf:fix id="change-type" use-for-each="('normal', 'special')">
         <sqf:description>
-          <sqf:title>Set the thing's type to <value-of select="$sqf:current"/></sqf:title>
+          <sqf:title>
+            Set the thing's type to <value-of select="$sqf:current"/>
+          </sqf:title>
         </sqf:description>
-        <sqf:replace match="@type" node-type="attribute" target="type" select="$sqf:current"/>
+        <sqf:replace match="@type" node-type="attribute" target="type" 
+          select="$sqf:current"/>
       </sqf:fix>
 
       <!-- 6 - Define a QuickFix to add a name: -->
